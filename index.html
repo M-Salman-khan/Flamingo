@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --color: #7f703d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Quicksand", Arial, Helvetica, sans-serif;
+            font-weight: 100;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* position: sticky;
+            top: 0; */
+            background-color: white;
+            height: 70px;
+        }
+
+        nav {
+            /* margin: auto; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav ul {
+            display: flex;
+            width: 60%;
+            align-items: center;
+            justify-content: space-around;
+            /* gap: 30px; */
+        }
+
+        nav ul li {
+            list-style: none;
+            /* padding: 30px; */
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            /* font-weight: 400; */
+        }
+
+        nav ul li:hover,
+        a:hover {
+            /* color: black; */
+            color: var(--color);
+            cursor: pointer;
+        }
+
+        .search {
+            display: flex;
+            /* margin-left: 30px; */
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding-left: 10px;
+            border: 1px solid transparent;
+            position: relative;
+        }
+
+        .search:hover {
+            border-color: #7f703d;
+        }
+
+        .fa-searchengin {
+            position: absolute;
+            left: 10px;
+        }
+
+        #searchArea {
+            border: none;
+            /* padding-left: 20px; */
+            /* position: absolute; */
+            padding-top: 10px;
+            outline: none;
+            width: 30%;
+            padding-bottom: 10px;
+        }
+
+        .side {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart>p {
+            background-color: var(--color);
+            padding: 5px 8px;
+            font-size: 10px;
+            border-radius: 50%;
+            color: white;
+        }
+
+        .cart>img {
+            color: black;
+        }
+
+        .acc {
+            display: flex;
+            margin-right: 30px;
+        }
+
+        .acc>img {
+            padding: 0 10px;
+        }
+
+        .hero {
+            width: 100%;
+            height: 90dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url(./assests/84770f_48dd791e3ec24e9199884ed30c609e22~mv2.avif);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-y: auto;
+        }
+
+        .box {
+            border: 1px solid var(--color);
+            outline: 5px solid white;
+            background-color: white;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .box>.main>span {
+            text-transform: uppercase;
+            color: var(--color);
+            font-weight: 400;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* padding-bottom: 20px; */
+        }
+
+        .main {
+            padding-bottom: 20px;
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: #7f703d;
+        }
+
+        .caption {
+            padding: 10px 0;
+            letter-spacing: 6px;
+            font-weight: 300;
+            color: var(--color);
+        }
+
+        .head>p {
+            color: var(--color);
+            font-size: 40px;
+            letter-spacing: 1.4px;
+            font-weight: 400;
+            margin: 20px 0;
+            text-align: center;
+            /* margin-top: 20px; */
+        }
+
+        .pdtDetails {
+            margin-top: 30px;
+        }
+
+        .pdtDetails p {
+            text-align: center;
+            font-size: 15px;
+            color: var(--color);
+        }
+
+        .pdtDetails>button {
+            background-color: transparent;
+            border: 1px solid var(--color);
+            padding: 8px 14px;
+            margin-top: 15px;
+            font-size: 15px;
+
+        }
+
+        .pdtDetails>button:hover {
+            background-color: var(--color);
+            border-color: transparent;
+            color: white;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .items {
+            display: flex;
+            width: 70%;
+            margin: 10px auto;
+            flex-wrap: wrap;
+            /* gap: 20px; */
+            justify-content: space-around;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* height: 150px; */
+            flex-direction: column;
+            /* border: 2px solid var(--color); */
+            padding: 30px;
+        }
+
+        .container .img img:hover {
+            transform: scale(1.1);
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        /* .img{
+            overflow: hidden;
+        }
+        img::after {
+            
+            background-color: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        img:hover::after {
+            opacity: 1;
+        } */
+
+        /* .img{
+            position: relative;
+        }
+        .img>span{
+            position: absolute;
+            background-color: var(--color);
+            color: white;
+            padding: 4px 10px;
+        } */
+        #about {
+            height: 155dvh;
+            width: 100%;
+            background-image: url(./assests/84770f_7e8c6e53e08040a6802b655e978e86e5~mv2.avif);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-y: auto;
+        }
+
+        .aboutSec {
+            height: 70dvh;
+            background-color: var(--color);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+
+        .headText p {
+            text-align: center;
+            padding: 40px;
+            font-size: 30px;
+            font-weight: 400;
+            letter-spacing: 12px;
+            color: aliceblue;
+        }
+
+        .paraText {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 570px;
+            margin: auto 30px;
+        }
+
+        .paraText p {
+            font-weight: 400;
+            color: aliceblue;
+            letter-spacing: 2px;
+            font-size: 14px;
+            line-height: 32px;
+            text-align: center;
+
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px;
+            gap: 50px;
+        }
+
+        .icons div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            color: aliceblue;
+        }
+
+        #contactMe {
+            height: 100dvh;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            flex-direction: column;
+        }
+
+        .headTextContact p {
+            color: var(--color);
+            text-align: center;
+            font-size: 30px;
+            text-transform: uppercase;
+            padding: 50px;
+            letter-spacing: 10px;
+            font-weight: 500;
+        }
+
+        .basicInfo p {
+            /* text-align: center; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            line-height: 32px;
+        }
+
+        .basicInfo p span {
+            color: var(--color);
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .form {
+            margin-top: 70px;
+            width: 600px;
+            /* max-width: 500px; */
+            /* background-color: #7f703d; */
+            border: 1px solid var(--color);
+            padding: 30px 50px;
+            background-color: white;
+            outline: 7px solid white;
+            box-sizing: border-box;
+            display: flex;
+            /* padding: 20px; */
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 30px;
+            /* height: 40%; */
+        }
+
+        .name {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .name div,
+        .mail,
+        .msg {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+        }
+
+        .name input,
+        .mail input,
+        .msg input,
+        #message {
+            outline: none;
+            margin-right: 20px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid var(--color);
+            padding: 5px 10px;
+        }
+
+        form div input {
+            padding-top: 20px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 30px;
+            font-size: 14px;
+            border: 1px solid var(--color);
+            font-weight: 400;
+            font-size: 16px;
+            background-color: transparent;
+            color: var(--color);
+        }
+
+        button:hover {
+            background-color: var(--color);
+            color: white;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .footer {
+            height: 50dvh;
+            margin-top: 20px;
+            width: 100%;
+            background-color: var(--color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .leagldetails{
+            margin: 10px 0;
+        }
+        .leagldetails p{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 7px;
+            color: white;
+        }
+        .totop{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 30px 0;
+            color: white;
+        }
+        .totop>i{
+            color: white;
+            font-size: 30px;
+        }
+        .totop>i:hover{
+            color: black;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .socialIcons{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 10px;
+        }
+        .socialIcons i{
+            /* background-color: transparent; */
+            font-size: 24px;
+            color: white;
+
+        }
+        .socialIcons>i:hover{
+            color: black;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .copyright{
+            color: white;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="search">
+                <i class="fa-brands fa-searchengin"></i>
+                <input type="text" id="searchArea" placeholder="Search...">
+            </div>
+            <ul>
+                <li><a href="#"> Home</a></li>
+                <li><a href="#shop">Shop</a> </li>
+                <li><a href="#about"> About</a></li>
+                <li><a href="#contactMe"> Contact</a></li>
+            </ul>
+            <div class="side">
+                <div class="acc">
+                    <img src="./assests/account_circle_24dp_7F703D_FILL0_wght400_GRAD0_opsz24.svg" alt="" srcset="">
+                    <p>Log In</p>
+                </div>
+                <div class="cart">
+                    <img src="./assests/shopping_cart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="" srcset="">
+                    <p class="cartCount">0</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="box">
+            <div class="main">
+                <span> Flamingo</span>
+                <span>design</span>
+            </div>
+            <div class="line"></div>
+            <div class="caption">HAND CRAFTED COLLECTION</div>
+        </div>
+    </div>
+    <div id="shop">
+        <div class="head">
+            <p>SHOP</p>
+        </div>
+        <div class="items">
+            <div class="container">
+                <div class="img">
+                    <!-- <span>Best seller</span> -->
+                    <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/FEBRUARY/20/DLi1QYOo_7c5c1215d88b41d99ea9ac2dbb48e8c9.jpg"
+                        width="250">
+                </div>
+                <div class="pdtDetails">
+                    <p class="pname">I'm a prduct</p>
+                    <p class="price">$70.00</p>
+                    <button onclick="addToCart()">Add to cart</button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="img">
+                    <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/FEBRUARY/19/vGxP08QQ_c4ff27140ec44b1a80654a063456ffa1.jpg"
+                        width="250">
+                </div>
+                <div class="pdtDetails">
+                    <p class="pname">I'm a prduct</p>
+                    <p class="price">$40.00</p>
+                    <button onclick="addToCart()">Add to cart</button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="img">
+                    <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/33471254/2025/4/28/a65c19dd-a204-461a-bce2-5653e17eecb51745849277524-GoSriKi-Women-Regular-Kurta-with-Palazzos--With-Dupatta-9631-1.jpg"
+                        width="250">
+                </div>
+                <div class="pdtDetails">
+                    <p class="pname">I'm a prduct</p>
+                    <p class="price">$30.00</p>
+                    <button onclick="addToCart()">Add to cart</button>
+                </div>
+            </div>
+
+
+
+            <div class="container">
+                <div class="img">
+                    <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/29393562/2024/5/7/77f2882c-bf3f-4f82-b6e7-5bc6c63c84651715050936430MinicultCottonShortswithmatchingtshirtwithcutePrintsBeigeRei1.jpg"
+                        width="250">
+                </div>
+                <div class="pdtDetails">
+                    <p class="pname">I'm a prduct</p>
+                    <p class="price">$80.00</p>
+                    <button onclick="addToCart()">Add to cart</button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="img">
+                    <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/29842554/2024/7/10/617bbdab-2caf-4992-b637-f926a9a1fe311720613518131-Nap-Chief-Kids-Printed-Pure-Cotton-T-shirt-With-Short-229172-11.jpg"
+                        width="250">
+                </div>
+                <div class="pdtDetails">
+                    <p class="pname">I'm a prduct</p>
+                    <p class="price">$50.00</p>
+                    <button onclick="addToCart()">Add to cart</button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="img">
+                    <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/28219632/2024/3/12/4fc84572-cad2-4b42-9a39-006351e9db651710256687610CampusSutraMenClassicOpaqueCheckedCasualShirt1.jpg"
+                        width="250">
+                </div>
+                <div class="pdtDetails">
+                    <p class="pname">I'm a prduct</p>
+                    <p class="price">$37.00</p>
+                    <button onclick="addToCart()">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="aboutSec">
+            <div class="headText">
+                <p>ABOUT</p>
+            </div>
+            <div class="paraText">
+                <p>I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or
+                    double click me to add your own content and make changes to the font. Feel free to drag and drop me
+                    anywhere you like on your page. I'm a great place for you to tell a story and let your users know a
+                    little more about you.</p>
+            </div>
+            <div class="icons">
+                <div class="organic">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                        fill="#fff">
+                        <path
+                            d="M480-162.67q-57.69 0-108.68-18.83-50.99-18.83-92.65-52.83l-60 59q-9.67 9.66-23 9.66-13.34 0-23-9.66-9.67-9.67-9.67-23 0-13.34 9.67-23l59-59.67q-34.23-41.78-52.95-92.72Q160-424.67 160-482.67q0-134 93-227t227-93h320v320q0 134-93 227t-227 93Zm0-66.66q105.56 0 179.44-73.89 73.89-73.89 73.89-179.45V-736H480q-105.56 0-179.44 73.89-73.89 73.89-73.89 179.44 0 43.49 14 83.08 14 39.59 38.33 71.26l213.67-213q9.66-9.67 23-9.67 13.33 0 23 9.67 10 9.86 10 23.43t-10 23.57l-213 213q31.66 24.33 71.25 38.16 39.59 13.84 83.08 13.84Zm0-253.34Z" />
+                    </svg>
+                    <p>Organic</p>
+                </div>
+                <div class="cotton">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                        fill="#fff">
+                        <path
+                            d="M480-885q46.33 55.67 85.33 106.83 39 51.17 70.67 100.5L880-860v380q0 83-31.5 156T763-197q-54 54-127 85.5T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480v-380l244 182.33q31.67-48.33 70.67-100 39-51.66 85.33-107.33ZM146.67-726.67V-480q0 56 17.5 105.5t48.16 91.17q-6-18.67-9.16-37.5Q200-339.67 200-360q0-56.33 22.17-120.83 22.16-64.5 66.16-139.17L146.67-726.67Zm333.33-54Q376.67-655.33 321.67-549q-55 106.33-55 189 0 88.33 62.5 150.83 62.5 62.5 150.83 62.5 88.33 0 150.83-62.5 62.5-62.5 62.5-150.83 0-82.67-55-190T480-780.67Zm333.33 54L671.67-620.33q44 74.66 66.16 139.5Q760-416 760-360q0 20.33-3.17 39.17-3.16 18.83-9.16 37.5 30.66-41.67 48.16-91.17 17.5-49.5 17.5-105.5v-246.67Z" />
+                    </svg>
+                    <p>100% Cotton</p>
+                </div>
+                <div class="waterproof">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                        fill="#fff">
+                        <path
+                            d="M483-205.33q14.67-.34 23.17-6.84 8.5-6.5 8.5-17.83 0-12-8.67-18.83-8.67-6.84-24.67-6.5-41.66 1-86-25.17Q351-306.67 339-373.67q-2-9.66-9.5-15.66t-16.5-6q-12 0-19 9.16-7 9.17-4.67 19.84Q305-280 363.33-242q58.34 38 119.67 36.67ZM480-80q-137 0-228.5-94T160-408q0-100 79.5-217.5T480-880q161 137 240.5 254.5T800-408q0 140-91.5 234T480-80Zm0-66.67q109.33 0 181.33-74.5 72-74.5 72-186.83 0-77-64.5-174.67-64.5-97.66-188.83-208.66-124.33 111-188.83 208.66Q226.67-485 226.67-408q0 112.33 72 186.83 72 74.5 181.33 74.5ZM480-480Z" />
+                    </svg>
+                    <p>Waterproof</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="contactMe">
+        <div class="headTextContact">
+            <p>Contact Us</p>
+        </div>
+        <div class="basicInfo">
+            <p>
+                <span>
+                    123-456-7890 / info@mysite.com
+                </span>
+                <span>
+                    500 Terry Francine Street San Francisco, CA 94158
+                </span>
+            </p>
+        </div>
+        <div class="form">
+            <div class="name">
+                <div class="firstName">
+                    <p>First Name *</p>
+                    <input type="text" required>
+                </div>
+                <div class="lastName">
+                    <p>Last Name *</p>
+                    <input type="text" required>
+                </div>
+            </div>
+            <div class="mail">
+                <p>Email *</p>
+                <input type="email" name="email" id="mail">
+            </div>
+            <div class="msg">
+                <p>Write a message </p>
+                <!-- <input type="text"> -->
+                <textarea name="message" id="message" rows="4"></textarea>
+            </div>
+            <div class="btn">
+
+                <button>Submit</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="totop">
+            <i class="fa-solid fa-arrow-up"></i>
+            <p>To top</p>
+        </div>
+        <div class="leagldetails">
+            <p>
+                <span>
+                    FAQ
+                </span>
+                <span>
+                    Shipping and Returns
+                </span>
+                <span>
+                    Terms and Conditions
+                </span>
+            </p>
+        </div>
+        <div class="socialIcons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-pinterest"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+        <div class="copyright"><p> © 2035 by Flamingo Designs.Made by M Salman Khan</p></div>
+    </div>
+    <script>
+        count = 0
+        let cartCount = document.querySelector(".cartCount")
+        function addToCart() {
+            count++
+            cartCount.innerText = count
+        }
+    </script>
+</body>
+
+</html>
