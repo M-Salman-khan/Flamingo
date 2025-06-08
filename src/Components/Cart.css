@@ -1,0 +1,93 @@
+@import "tailwindcss";
+.cartPage{
+    width: 450px;
+    height: 100dvh;
+    /* margin-top: 2px; */
+    /* border: 1px solid black; */
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    right: 0px;
+    transition:transform 0.5s ease;
+    padding: 20px 15px;
+    background: white; /* optional but useful to ensure visibility */
+    transform: translateX(0);
+    
+}
+.dltBtn{
+    display: flex;
+    justify-content: right;
+}
+.priceAndDlt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+.cartPage>button{
+    right: 10px;
+    position: absolute;
+    border: none;
+}
+
+.cartPageHide{
+    transform: translateX(100%);
+}
+.headCart{
+    border-bottom: 1px solid black;
+}
+.headCart>p{
+    font-size: 22px;
+    padding-bottom: 20px;
+    
+}
+.headCart p span{
+    font-size: 16px;
+}
+.pdtDetail{
+    display: flex;
+    justify-content: space-between;
+    margin:20px 0;
+}
+.pdtImg{
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    padding: 5px;
+    border: 1px solid grey;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+}
+.pdtImg img{
+    width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the square, may crop image */
+  object-position: top;
+  border-radius: 2px;
+}
+.pdtValue{
+    width: 60%;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* translucent black */
+  z-index: 50; /* below cart but above rest of page */
+  transition: opacity 0.3s ease;
+}
+.buyBtn{
+    width: 93%;
+    bottom: 20px;
+    position: absolute;
+    border: 1px solid #7f703d;
+}
+.buyBtn button{
+    width: 100%;
+}
+
