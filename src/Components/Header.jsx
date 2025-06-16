@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useContext } from 'react'
+import { React, useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../Context/CartContext';
 import Cart from './Cart';
@@ -7,9 +7,6 @@ const Header = () => {
     const [hideOrAppear, setHideOrAppear] = useState(false)
     const [navSpawn, setNavSpawn] = useState(true)
     const [appear, setAppear] = useState(false)
-    const toggleCart = () => {
-        setAppear((prev) => !prev);
-    };
 
     return (<>
         <header>
@@ -31,7 +28,7 @@ const Header = () => {
                         <img srcSet="./assests/account_circle_24dp_7F703D_FILL0_wght400_GRAD0_opsz24.svg" alt="" srcset="" />
                         <p>Log In</p>
                     </div></Link>
-                    <div className="cart" onClick={toggleCart}>
+                    <div className="cart cursor-pointer" onClick={()=>setAppear(!appear)}>
                         <img srcSet="./assests/shopping_cart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="" srcset="" />
                         <p className="cartCount">{cart.length}</p>
                     </div>
@@ -52,8 +49,10 @@ const Header = () => {
                 </div>
             </nav>
         </header>
-        {/* <Cart/> */}
-    {appear && <Cart props={navSpawn}/>}
+   
+      
+      <Cart isVisible={appear} setIsVisible={setAppear} setAppear={setAppear} />
+   
     
     </>
     )

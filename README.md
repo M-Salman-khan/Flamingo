@@ -11,7 +11,7 @@ Flamingo is a modern e-commerce web application for shopping clothes, built with
 - About and contact sections
 - Routing with React Router
 
-## Project Structure
+## Folder Structure
 
 ```
 flamingo/
@@ -50,8 +50,8 @@ flamingo/
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/M-Salman-khan/Flamingo/tree/master/React_Website.git
-   cd React_Website
+   git clone https://github.com/M-Salman-khan/Flamingo.git
+   cd flamingo
    ```
 
 2. Install dependencies:
@@ -93,4 +93,4 @@ This project is licensed under the MIT License.
 
 ---
 
-Made with Salman ❤️ using [React](https://react.dev/) and [Vite](https://vitejs.dev/).
+Made with ❤️ using [React](https://react.dev/) and [Vite](https://vitejs.dev/).

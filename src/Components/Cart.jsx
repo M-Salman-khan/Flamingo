@@ -1,30 +1,50 @@
-import {React,useState} from 'react'
+import { React, useContext } from 'react'
 import Header from './Header'
+import { CartContext } from '../Context/CartContext';
 import './Cart.css'
 
-const Cart = (props) => {
+const Cart = ({ setIsVisible, isVisible, setAppear }) => {
+    const { cart } = useContext(CartContext);
     return (
         <>
-            <div className={`cartPage ${props.navSpawn?"cartPageHide":""}`}>
-                <div className="headCart ">
-                    <p>Cart</p>
+            {isVisible ? <div className="overlay" onClick={() => setAppear(false)}></div> : ""}
+            <div className={`cartPage ${isVisible ? "" : "cartPageHide"}`}>
+                <button onClick={() => setIsVisible(!isVisible)}>✖</button>
+                <div className="headCart">
+                    <p>Cart <span>({cart.length} items) </span></p>
                 </div>
-            <div className="pdtDetail">
-                <div className="pdtImg"><img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/FEBRUARY/20/DLi1QYOo_7c5c1215d88b41d99ea9ac2dbb48e8c9.jpg" alt="" srcset="" /></div>
-                <div className="pdtValue">
-                    <div className="pdtName">I'm a Product</div>
-                    <div className="pdtPrice">$85.00</div>
-                    <div className="indecBtn">
+                <div className="pdtDetail">
+                    <div className="pdtImg"><img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/FEBRUARY/20/DLi1QYOo_7c5c1215d88b41d99ea9ac2dbb48e8c9.jpg" alt="" srcset="" /></div>
+                    <div className="pdtValue">
+                        <div className="pdtName">I'm a Product</div>
+                        <div className="pdtPrice">$85.00</div>
+                        <div className="indecBtn">
 
+                        </div>
+                    </div>
+                    <div className="priceAndDlt">
+                        <div className="dltBtn"><i class="fa-solid fa-trash"></i></div>
+                        <div className="pdtPrice">$85.00</div>
                     </div>
                 </div>
-                <div className="priceAndDlt">
-                    <div className="dltBtn"></div>
-                    <div className="pdtPrice">$85.00</div>
+                <div className="subTotal">
+                    <div className="total">
+                        <p>Subtotal</p>
+                        <p>$10.00</p>
+                    </div>
+                    <div className="totalCaption">
+                        <p>Taxes and shipping are calculated at checkout.</p>
+                    </div>
+                    <div className="buyBtn">
+                        <button>Checkout</button>
+                        <button>View Cart</button>
+                        <div className="secureCheck">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>Secure Checkout</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-            {/* <button onClick={()=>setAppear(!appear)}>Hide</button> */}
 
         </>
     )

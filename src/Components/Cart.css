@@ -1,14 +1,35 @@
 @import "tailwindcss";
 .cartPage{
     width: 450px;
-    height: 90dvh;
+    height: 100dvh;
+    /* margin-top: 2px; */
+    /* border: 1px solid black; */
     position: fixed;
+    top: 0;
+    z-index: 9999;
     right: 0px;
     transition:transform 0.5s ease;
-    padding: 10px 15px;
+    padding: 20px 15px;
     background: white; /* optional but useful to ensure visibility */
     transform: translateX(0);
+    
 }
+.dltBtn{
+    display: flex;
+    justify-content: right;
+}
+.priceAndDlt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+.cartPage>button{
+    right: 10px;
+    position: absolute;
+    border: none;
+}
+
 .cartPageHide{
     transform: translateX(100%);
 }
@@ -18,7 +39,87 @@
 .headCart>p{
     font-size: 22px;
     padding-bottom: 20px;
+    
+}
+.headCart p span{
+    font-size: 16px;
+}
+.pdtDetail{
+    display: flex;
+    justify-content: space-between;
+    margin:20px 0;
 }
 .pdtImg{
-    width: 80px;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    padding: 5px;
+    border: 1px solid grey;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+}
+.pdtImg img{
+    width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the square, may crop image */
+  object-position: top;
+  border-radius: 2px;
+}
+.pdtValue{
+    width: 60%;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* translucent black */
+  z-index: 50; /* below cart but above rest of page */
+  transition: opacity 0.3s ease;
+}
+.buyBtn{
+    width: 100%;
+}
+.buyBtn button{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.buyBtn button:nth-child(1){
+    background-color: #7f703d;
+    color: white;
+}
+.buyBtn button:nth-child(1):hover{
+    background-color: #8b805d;
+}
+.secureCheck{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.secureCheck p{
+    margin-left: 10px;
+}
+
+.subTotal{
+    position: fixed;
+    bottom: 20px;
+    width: 92%;
+    border-top: 1px solid grey;
+    padding-top: 10px;
+}
+.subTotal .total{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.subTotal .total p{
+    font-size: 20px;
+}
+.subTotal .totalCaption p{
+    font-size: 13px;
+    margin-bottom: 10px;
 }
