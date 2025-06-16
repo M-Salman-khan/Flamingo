@@ -2,7 +2,6 @@
 .cartPage{
     width: 450px;
     height: 90dvh;
-    /* border: 2px solid black; */
     position: fixed;
     right: 0px;
     transition:transform 0.5s ease;
