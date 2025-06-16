@@ -82,12 +82,44 @@
   transition: opacity 0.3s ease;
 }
 .buyBtn{
-    width: 93%;
-    bottom: 20px;
-    position: absolute;
-    border: 1px solid #7f703d;
+    width: 100%;
 }
 .buyBtn button{
     width: 100%;
+    margin-bottom: 10px;
+}
+.buyBtn button:nth-child(1){
+    background-color: #7f703d;
+    color: white;
+}
+.buyBtn button:nth-child(1):hover{
+    background-color: #8b805d;
+}
+.secureCheck{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.secureCheck p{
+    margin-left: 10px;
 }
 
+.subTotal{
+    position: fixed;
+    bottom: 20px;
+    width: 92%;
+    border-top: 1px solid grey;
+    padding-top: 10px;
+}
+.subTotal .total{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.subTotal .total p{
+    font-size: 20px;
+}
+.subTotal .totalCaption p{
+    font-size: 13px;
+    margin-bottom: 10px;
+}

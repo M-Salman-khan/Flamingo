@@ -1,4 +1,4 @@
-import { React,useContext } from 'react'
+import { React, useContext } from 'react'
 import Header from './Header'
 import { CartContext } from '../Context/CartContext';
 import './Cart.css'
@@ -27,13 +27,22 @@ const Cart = ({ setIsVisible, isVisible, setAppear }) => {
                         <div className="pdtPrice">$85.00</div>
                     </div>
                 </div>
-                <div className="buyBtn">
-                    <button>Checkout</button>
-                <button>Buy now</button>
-                <div className="secureCheck">
-                    <i class="fa-solid fa-lock"></i>
-                    Secure Checkout
-                </div>
+                <div className="subTotal">
+                    <div className="total">
+                        <p>Subtotal</p>
+                        <p>$10.00</p>
+                    </div>
+                    <div className="totalCaption">
+                        <p>Taxes and shipping are calculated at checkout.</p>
+                    </div>
+                    <div className="buyBtn">
+                        <button>Checkout</button>
+                        <button>View Cart</button>
+                        <div className="secureCheck">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>Secure Checkout</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
