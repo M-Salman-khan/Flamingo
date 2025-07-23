@@ -2,12 +2,12 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div class="footer">
-        <div class="totop">
-            <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
+    <div className="footer">
+        <div className="totop">
+            <a href="#"><i className="fa-solid fa-arrow-up"></i></a>
             <p>To top</p>
         </div>
-        <div class="leagldetails">
+        <div className="leagldetails">
             <p>
                 <span>
                     FAQ
@@ -20,12 +20,12 @@ const Footer = () => {
                 </span>
             </p>
         </div>
-        <div class="socialIcons">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-pinterest"></i>
-            <i class="fa-brands fa-instagram"></i>
+        <div className="socialIcons">
+            <i className="fa-brands fa-facebook"></i>
+            <i className="fa-brands fa-pinterest"></i>
+            <i className="fa-brands fa-instagram"></i>
         </div>
-        <div class="copyright">
+        <div className="copyright">
             <p>© 2035 by Flamingo Designs. Made by M Salman Khan</p>
         </div>
     </div>

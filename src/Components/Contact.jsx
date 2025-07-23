@@ -3,10 +3,10 @@ import React from 'react'
 const Contact = () => {
   return (
     <div id="contactMe">
-        <div class="headTextContact">
+        <div className="headTextContact">
             <p>Contact Us</p>
         </div>
-        <div class="basicInfo">
+        <div className="basicInfo">
             <p>
                 <span>
                     123-456-7890 / info@mysite.com
@@ -16,26 +16,26 @@ const Contact = () => {
                 </span>
             </p>
         </div>
-        <form class="form">
-            <div class="name">
-                <div class="firstName">
+        <form className="form">
+            <div className="name">
+                <div className="firstName">
                     <p>First Name *</p>
                     <input type="text" required/>
                 </div>
-                <div class="lastName">
+                <div className="lastName">
                     <p>Last Name *</p>
                     <input type="text" required/>
                 </div>
             </div>
-            <div class="mail">
+            <div className="mail">
                 <p>Email *</p>
                 <input type="email" name="email" id="mail" required/>
             </div>
-            <div class="msg">
+            <div className="msg">
                 <p>Write a message </p>
                 <textarea name="message" id="message" rows="4"></textarea>
             </div>
-            <div class="btn">
+            <div className="btn">
 
                 <button type="submit">Submit</button>
 

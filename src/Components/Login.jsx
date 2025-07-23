@@ -17,7 +17,7 @@ const Login = () => {
             <Header />
             <div id='contactMe' style={{height:"90dvh"}}>
                 <form className="form">
-                <div className='headerOfLogin'>{loginAllow?"Log In":"Sign Up"} kr madarchod</div>
+                <div className='headerOfLogin'>{loginAllow?"Log In":"Sign Up"}</div>
                     <div className="name">
                         <div className="firstName">
                             <p>First Name </p>

@@ -1,4 +1,4 @@
-import { useState,useEffect,useContext } from "react"
+import { useContext } from "react"
 import { CartContext } from '../Context/CartContext';
 
 
@@ -42,10 +42,15 @@ const Shop = () => {
             imgSrc: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/28219632/2024/3/12/4fc84572-cad2-4b42-9a39-006351e9db651710256687610CampusSutraMenClassicOpaqueCheckedCasualShirt1.jpg"
         }
     ];
-
     const addToCart = (product) => {
-        const updatedCart = [...cart, product]
+        const productWithUniqueId = {
+           ...product,
+           cartItemId: Date.now() + Math.random() // unique ID per click
+       };
+        const updatedCart = [...cart, productWithUniqueId]
         setCart(updatedCart)
+        console.log(updatedCart);
+        
 
     }
     return (

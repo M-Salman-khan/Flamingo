@@ -1,125 +1,181 @@
 @import "tailwindcss";
-.cartPage{
+
+/* Cart Sidebar */
+.cartPage {
     width: 450px;
-    height: 100dvh;
-    /* margin-top: 2px; */
-    /* border: 1px solid black; */
+    height: 100vh;
     position: fixed;
     top: 0;
+    right: 0;
     z-index: 9999;
-    right: 0px;
-    transition:transform 0.5s ease;
-    padding: 20px 15px;
-    background: white; /* optional but useful to ensure visibility */
+    background: white;
+    transition: transform 0.5s ease;
     transform: translateX(0);
-    
-}
-.dltBtn{
-    display: flex;
-    justify-content: right;
-}
-.priceAndDlt{
+    padding: 20px 15px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 5px;
-}
-.cartPage>button{
-    right: 10px;
-    position: absolute;
-    border: none;
+    overflow-y: auto;
 }
 
-.cartPageHide{
+/* Hide Cart */
+.cartPageHide {
     transform: translateX(100%);
 }
-.headCart{
-    border-bottom: 1px solid black;
+
+/* Close Button */
+.cartPage > button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer;
 }
-.headCart>p{
+
+/* Overlay Background */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    transition: opacity 0.3s ease;
+}
+
+/* Cart Header */
+.headCart {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+.headCart > p {
     font-size: 22px;
-    padding-bottom: 20px;
-    
+    font-weight: 500;
 }
-.headCart p span{
+.headCart p span {
     font-size: 16px;
+    font-weight: normal;
 }
-.pdtDetail{
+
+/* Product Container */
+.pdtDetail {
     display: flex;
     justify-content: space-between;
-    margin:20px 0;
+    margin: 20px 0;
+    align-items: center;
 }
-.pdtImg{
+
+/* Product Image */
+.pdtImg {
     width: 90px;
     height: 90px;
-    overflow: hidden;
-    padding: 5px;
-    border: 1px solid grey;
+    border: 1px solid #ccc;
     display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background-color: white;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
 }
-.pdtImg img{
+.pdtImg img {
     width: 100%;
-  height: 100%;
-  object-fit: cover; /* fills the square, may crop image */
-  object-position: top;
-  border-radius: 2px;
+    height: 100%;
+    object-fit: cover;
 }
-.pdtValue{
-    width: 60%;
+
+/* Product Details */
+.pdtValue {
+    width: 50%;
+    padding-left: 10px;
 }
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* translucent black */
-  z-index: 50; /* below cart but above rest of page */
-  transition: opacity 0.3s ease;
+.pdtName {
+    font-weight: 600;
+    margin-bottom: 8px;
 }
-.buyBtn{
-    width: 100%;
+.pdtPrice {
+    color: #555;
+    font-size: 16px;
 }
-.buyBtn button{
-    width: 100%;
+
+/* Price and Delete */
+.priceAndDlt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    padding-left: 10px;
+}
+.dltBtn {
+    cursor: pointer;
+    color: #a00;
+}
+.dltBtn:hover {
+    color: red;
+}
+
+/* Subtotal Section */
+.subTotal {
+    position: sticky;
+    bottom: -20px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    padding: 15px 0;
+    margin-top: auto;
+}
+.subTotal .total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
     margin-bottom: 10px;
 }
-.buyBtn button:nth-child(1){
+.subTotal .totalCaption p {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Checkout Buttons */
+.buyBtn {
+    width: 100%;
+}
+.buyBtn button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.buyBtn button:nth-child(1) {
     background-color: #7f703d;
     color: white;
 }
-.buyBtn button:nth-child(1):hover{
+.buyBtn button:nth-child(1):hover {
     background-color: #8b805d;
 }
-.secureCheck{
+.buyBtn button:nth-child(2) {
+    background-color: #eee;
+}
+.buyBtn button:nth-child(2):hover {
+    background-color: #ddd;
+}
+
+/* Secure Checkout */
+.secureCheck {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 5px;
 }
-.secureCheck p{
+.secureCheck i {
+    color: green;
+}
+.secureCheck p {
     margin-left: 10px;
-}
-
-.subTotal{
-    position: fixed;
-    bottom: 20px;
-    width: 92%;
-    border-top: 1px solid grey;
-    padding-top: 10px;
-}
-.subTotal .total{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-.subTotal .total p{
-    font-size: 20px;
-}
-.subTotal .totalCaption p{
-    font-size: 13px;
-    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
 }

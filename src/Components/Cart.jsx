@@ -5,32 +5,60 @@ import './Cart.css'
 
 const Cart = ({ setIsVisible, isVisible, setAppear }) => {
     const { cart } = useContext(CartContext);
+    const cartItems = () => {
+        const items = localStorage.getItem("cart")
+        try {
+            const parseItem = JSON.parse(items);
+            return parseItem;
+
+
+        }
+        catch (error) {
+            console.error("Failed to fetch items", error)
+            return []
+        }
+    }
+    let sum=0
     return (
         <>
             {isVisible ? <div className="overlay" onClick={() => setAppear(false)}></div> : ""}
             <div className={`cartPage ${isVisible ? "" : "cartPageHide"}`}>
                 <button onClick={() => setIsVisible(!isVisible)}>✖</button>
+               
+
                 <div className="headCart">
                     <p>Cart <span>({cart.length} items) </span></p>
                 </div>
-                <div className="pdtDetail">
-                    <div className="pdtImg"><img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/FEBRUARY/20/DLi1QYOo_7c5c1215d88b41d99ea9ac2dbb48e8c9.jpg" alt="" srcset="" /></div>
+                {cartItems().map((item) => (
+                <div className="pdtDetail" key={item.cartItemId}>
+                    <div className="pdtImg"><img srcSet={item.imgSrc} alt=""/></div>
                     <div className="pdtValue">
-                        <div className="pdtName">I'm a Product</div>
-                        <div className="pdtPrice">$85.00</div>
+                        <div className="pdtName">{item.name}</div>
+                        <div className="pdtPrice">${item.price}</div>
                         <div className="indecBtn">
 
                         </div>
                     </div>
                     <div className="priceAndDlt">
-                        <div className="dltBtn"><i class="fa-solid fa-trash"></i></div>
-                        <div className="pdtPrice">$85.00</div>
+                        <div className="dltBtn"><i className="fa-solid fa-trash" onClick={() => {
+                        const storedItems = JSON.parse(localStorage.getItem("cart")) || [];
+                        const updatedItems = storedItems.filter(p => p.cartItemId !== item.cartItemId);
+                        localStorage.setItem("cart", JSON.stringify(updatedItems));
+                        window.location.reload(); // You can also use state to re-render instead of reload
+                    }}></i></div>
+                        <div className="pdtPrice">${item.price}</div>
                     </div>
                 </div>
+                ))}
+
+                {cartItems().map((item)=>{
+                    sum+=item["price"];
+                    
+                })}
                 <div className="subTotal">
                     <div className="total">
                         <p>Subtotal</p>
-                        <p>$10.00</p>
+                        <p>${sum}</p>
                     </div>
                     <div className="totalCaption">
                         <p>Taxes and shipping are calculated at checkout.</p>
@@ -39,7 +67,7 @@ const Cart = ({ setIsVisible, isVisible, setAppear }) => {
                         <button>Checkout</button>
                         <button>View Cart</button>
                         <div className="secureCheck">
-                            <i class="fa-solid fa-lock"></i>
+                            <i className="fa-solid fa-lock"></i>
                             <p>Secure Checkout</p>
                         </div>
                     </div>

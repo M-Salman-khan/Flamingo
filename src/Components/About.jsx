@@ -3,18 +3,18 @@ import React from 'react'
 const About = () => {
   return (
     <div id="about">
-        <div class="aboutSec">
-            <div class="headText">
+        <div className="aboutSec">
+            <div className="headText">
                 <p>ABOUT</p>
             </div>
-            <div class="paraText">
+            <div className="paraText">
                 <p>I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or
                     double click me to add your own content and make changes to the font. Feel free to drag and drop me
                     anywhere you like on your page. I'm a great place for you to tell a story and let your users know a
                     little more about you.</p>
             </div>
-            <div class="icons">
-                <div class="organic">
+            <div className="icons">
+                <div className="organic">
                     <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                         fill="#fff">
                         <path
@@ -22,7 +22,7 @@ const About = () => {
                     </svg>
                     <p>Organic</p>
                 </div>
-                <div class="cotton">
+                <div className="cotton">
                     <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                         fill="#fff">
                         <path
@@ -30,7 +30,7 @@ const About = () => {
                     </svg>
                     <p>100% Cotton</p>
                 </div>
-                <div class="waterproof">
+                <div className="waterproof">
                     <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                         fill="#fff">
                         <path
