@@ -10,15 +10,15 @@ const Cart = ({ setIsVisible, isVisible, setAppear }) => {
         try {
             const parseItem = JSON.parse(items);
             return parseItem;
-
-
         }
         catch (error) {
             console.error("Failed to fetch items", error)
             return []
         }
     }
-    let sum=0
+    // let sum=0
+    const parsedItems = cartItems();
+    const subtotal = parsedItems.reduce((sum, item) => sum + item.price, 0);
     return (
         <>
             {isVisible ? <div className="overlay" onClick={() => setAppear(false)}></div> : ""}
@@ -29,7 +29,7 @@ const Cart = ({ setIsVisible, isVisible, setAppear }) => {
                 <div className="headCart">
                     <p>Cart <span>({cart.length} items) </span></p>
                 </div>
-                {cartItems().map((item) => (
+                {parsedItems.map((item) => (
                 <div className="pdtDetail" key={item.cartItemId}>
                     <div className="pdtImg"><img srcSet={item.imgSrc} alt=""/></div>
                     <div className="pdtValue">
@@ -50,15 +50,10 @@ const Cart = ({ setIsVisible, isVisible, setAppear }) => {
                     </div>
                 </div>
                 ))}
-
-                {cartItems().map((item)=>{
-                    sum+=item["price"];
-                    
-                })}
                 <div className="subTotal">
                     <div className="total">
                         <p>Subtotal</p>
-                        <p>${sum}</p>
+                        <p>${subtotal}</p>
                     </div>
                     <div className="totalCaption">
                         <p>Taxes and shipping are calculated at checkout.</p>
