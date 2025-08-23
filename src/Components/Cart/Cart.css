@@ -33,6 +33,10 @@
     font-size: 18px;
     cursor: pointer;
 }
+.cartPage > button:hover {
+    /* color: red; */
+    background-color: #7f703d;
+}
 
 /* Overlay Background */
 .overlay {

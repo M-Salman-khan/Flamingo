@@ -1,7 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { useCart } from '../Context/CartContext';
-import Cart from './Cart';
+import { useCart } from '../../Context/CartContext';
+import Cart from '../Cart/Cart';
 const Header = () => {
     const { cart } = useCart();
     const [hideOrAppear, setHideOrAppear] = useState(false)
@@ -10,9 +10,7 @@ const Header = () => {
 
     return (<>
         <header>
-
             <nav>
-
                 <div className="search">
                     <i className="fa-brands fa-searchengin"></i>
                     <input type="text" id="searchArea" placeholder="Search..." />
@@ -50,11 +48,7 @@ const Header = () => {
                 </div>
             </nav>
         </header>
-   
-      
       <Cart isVisible={appear} setIsVisible={setAppear} setAppear={setAppear} />
-   
-    
     </>
     )
 }

@@ -1,14 +1,14 @@
-import Header from './Components/Header'
-import Hero from './Components/Hero'
-import Shop from './Components/Shop'
-import About from './Components/About'
-import Contact from './Components/Contact'
-import Footer from './Components/Footer'
-import Login from './Components/Login'
-import SignUp from './Components/SignUp'
+import Header from './Components/Header/Header'
+import Hero from './Components/Hero/Hero'
+import Shop from './Components/Shop/Shop'
+import About from './Components/About/About'
+import Contact from './Components/Contact/Contact'
+import Footer from './Components/Footer/Footer'
+import Login from './Components/Login/Login'
+import SignUp from './Components/Signup/SignUp'
 import { CartProvider } from './Context/CartProvider';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Cart from './Components/Cart'
+import Cart from './Components/Cart/Cart'
 
 const MainPage = () => (
 <>

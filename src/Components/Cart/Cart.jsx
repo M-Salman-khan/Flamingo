@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react';
-import Header from './Header';
-import { useCart } from "../Context/CartContext";
+import { useCart } from "../../Context/CartContext";
 import './Cart.css';
 
 const Cart = ({ setIsVisible, isVisible, setAppear }) => {
-  const { countCart,cart,setCart } = useCart();
+  const { countCart,setCart } = useCart();
   const [parsedItems, setParsedItems] = useState([]);
-  
-  // Fetch cart items once
   useEffect(() => {
     try {
       const items = JSON.parse(localStorage.getItem('cart')) || [];
@@ -15,7 +12,7 @@ const Cart = ({ setIsVisible, isVisible, setAppear }) => {
     } catch (error) {
       console.error('Failed to fetch items', error);
     }
-  }, [isVisible]); // Re-run when cart becomes visible
+  }, [isVisible]);
 
   const subtotal = parsedItems.reduce((sum, item) => sum + Number(item.price), 0);
 

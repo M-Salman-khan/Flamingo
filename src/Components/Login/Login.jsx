@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import Header from './Header'
-import Footer from './Footer'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 import { Link } from 'react-router-dom';
 
 const Login = () => {
