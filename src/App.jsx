@@ -5,7 +5,8 @@ import About from './Components/About'
 import Contact from './Components/Contact'
 import Footer from './Components/Footer'
 import Login from './Components/Login'
-import { CartProvider } from './Context/CartContext';
+import SignUp from './Components/SignUp'
+import { CartProvider } from './Context/CartProvider';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cart from './Components/Cart'
 
@@ -27,6 +28,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>

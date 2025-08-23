@@ -284,6 +284,9 @@ a:hover {
   /* border: 2px solid var(--color); */
   padding: 30px;
 }
+.Container .img img{
+  transition: transform 0.3s ease-in-out;
+}
 
 .Container .img img:hover {
   transform: scale(1.1);

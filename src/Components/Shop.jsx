@@ -1,9 +1,9 @@
-import { useContext } from "react"
-import { CartContext } from '../Context/CartContext';
+// import { useContext } from "react"
+import { useCart } from '../Context/CartContext';
 
 
 const Shop = () => {
-    const { cart, setCart } = useContext(CartContext);
+    const { cart, setCart } = useCart();
     const products = [
         {
             id: 1,
@@ -49,7 +49,7 @@ const Shop = () => {
        };
         const updatedCart = [...cart, productWithUniqueId]
         setCart(updatedCart)
-        console.log(updatedCart);
+        // console.log(updatedCart);
         
 
     }

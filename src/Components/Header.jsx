@@ -1,9 +1,9 @@
-import { React, useState, useContext } from 'react'
+import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { CartContext } from '../Context/CartContext';
+import { useCart } from '../Context/CartContext';
 import Cart from './Cart';
 const Header = () => {
-    const { cart } = useContext(CartContext);
+    const { cart } = useCart();
     const [hideOrAppear, setHideOrAppear] = useState(false)
     const [navSpawn, setNavSpawn] = useState(true)
     const [appear, setAppear] = useState(false)
