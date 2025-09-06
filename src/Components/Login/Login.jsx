@@ -3,7 +3,6 @@ import Footer from '../Footer/Footer'
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-    // const [loginAllow, setloginAllow] = useState(false)
     const handleLoginClick = (e) => {
         e.preventDefault();
         alert("Login Successfull! ")
