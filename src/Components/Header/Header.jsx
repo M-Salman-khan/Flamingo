@@ -24,11 +24,11 @@ const Header = () => {
                 <div className="logoName">Flamingo</div>
                 <div className="side"><Link to="/login" className='amphor'>
                     <div className="acc">
-                        <img srcSet="./assests/account_circle_24dp_7F703D_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                        <img srcSet="/assets/account_circle_24dp_7F703D_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
                         <p>Log In</p>
                     </div></Link>
                     <div className="cart cursor-pointer" onClick={()=>setAppear(!appear)}>
-                        <img srcSet="./assests/shopping_cart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                        <img srcSet="/assets/shopping_cart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
                         <p className="cartCount">{cart.length}</p>
                     </div>
                 </div>
