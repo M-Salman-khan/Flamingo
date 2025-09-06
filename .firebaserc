@@ -1,7 +1,7 @@
 {
   "projects": {
-    "default": "flamingo-dev-2025",
-    "prod": "flamingo-dev-2025",
+  "default": "flamingo-design",
+  "prod": "flamingo-design",
     "flamingo": "flamingo-design"
   },
   "targets": {},
