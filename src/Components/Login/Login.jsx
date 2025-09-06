@@ -7,12 +7,8 @@ const Login = () => {
     const handleLoginClick = (e) => {
         e.preventDefault();
         alert("Login Successfull! ")
-        window.location.href("/")
+        window.location.href="/"
     }
-    // const handleSignUpClick = (e) => {
-    //     e.preventDefault();
-    //     setloginAllow(false);
-    // }
     return (
         <>
             <Header />

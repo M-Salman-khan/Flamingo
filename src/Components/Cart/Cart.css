@@ -3,11 +3,12 @@
 /* Cart Sidebar */
 .cartPage {
     width: 450px;
-    height: 100vh;
+    height: 100dvh;
     position: fixed;
     top: 0;
     right: 0;
     z-index: 9999;
+    /* bottom: 10px; */
     background: white;
     transition: transform 0.5s ease;
     transform: translateX(0);
@@ -15,14 +16,17 @@
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 
 /* Hide Cart */
 .cartPageHide {
     transform: translateX(100%);
 }
-
+.pdtPage{
+    overflow-y:auto ;
+    padding-right: 15px;
+}
 /* Close Button */
 .cartPage > button {
     position: absolute;

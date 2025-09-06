@@ -3,7 +3,7 @@ import { useCart } from "../../Context/CartContext";
 import './Cart.css';
 
 const Cart = ({ setIsVisible, isVisible, setAppear }) => {
-  const { countCart,setCart } = useCart();
+  const { countCart, setCart } = useCart();
   const [parsedItems, setParsedItems] = useState([]);
   useEffect(() => {
     try {
@@ -17,12 +17,12 @@ const Cart = ({ setIsVisible, isVisible, setAppear }) => {
   const subtotal = parsedItems.reduce((sum, item) => sum + Number(item.price), 0);
 
   const deleteItem = (id) => {
-          const updatedItems = parsedItems.filter((item) => item.cartItemId !== id);
-          setParsedItems(updatedItems);
-          setCart(updatedItems);
-          localStorage.setItem('cart', JSON.stringify(updatedItems));
-      };
-  
+    const updatedItems = parsedItems.filter((item) => item.cartItemId !== id);
+    setParsedItems(updatedItems);
+    setCart(updatedItems);
+    localStorage.setItem('cart', JSON.stringify(updatedItems));
+  };
+
 
   return (
     <>
@@ -40,14 +40,15 @@ const Cart = ({ setIsVisible, isVisible, setAppear }) => {
         {parsedItems.length === 0 ? (
           <p className="emptyCart">Your cart is empty.</p>
         ) : (
-          parsedItems.map((item) => (
+          <div className='pdtPage'>
+          {parsedItems.map((item) => (
             <div className="pdtDetail" key={item.cartItemId}>
               <div className="pdtImg">
                 <img srcSet={item.imgSrc} alt={item.name} />
               </div>
               <div className="pdtValue">
                 <div className="pdtName">{item.name}</div>
-                <div className="pdtPrice">${item.price}</div>
+                <div className="pdtPrice">${item.price} - Qty 1</div>
               </div>
               <div className="priceAndDlt">
                 <div className="dltBtn">
@@ -59,7 +60,8 @@ const Cart = ({ setIsVisible, isVisible, setAppear }) => {
                 <div className="pdtPrice">${item.price}</div>
               </div>
             </div>
-          ))
+            ))}
+          </div>
         )}
 
         <div className="subTotal">

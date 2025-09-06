@@ -6,38 +6,38 @@ const Shop = () => {
     const products = [
         {
             id: 1,
-            name: "I'm a product",
-            price: 70.00,
+            name: "Navy blue button-up shirt & beige pants",
+            price: 60,
             imgSrc: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/FEBRUARY/20/DLi1QYOo_7c5c1215d88b41d99ea9ac2dbb48e8c9.jpg"
         },
         {
             id: 2,
-            name: "I'm a product",
-            price: 40.00,
+            name: "Light pink blouse & dark pants",
+            price: 42,
             imgSrc: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/FEBRUARY/19/vGxP08QQ_c4ff27140ec44b1a80654a063456ffa1.jpg"
         },
         {
             id: 3,
-            name: "I'm a product",
-            price: 30.00,
+            name: "Grey dress with pink/grey shawl",
+            price: 50,
             imgSrc: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/33471254/2025/4/28/a65c19dd-a204-461a-bce2-5653e17eecb51745849277524-GoSriKi-Women-Regular-Kurta-with-Palazzos--With-Dupatta-9631-1.jpg"
         },
         {
             id: 4,
-            name: "I'm a product",
-            price: 80.00,
+            name: "Beige t-shirt & shorts with cartoon deer",
+            price: 45,
             imgSrc: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/29393562/2024/5/7/77f2882c-bf3f-4f82-b6e7-5bc6c63c84651715050936430MinicultCottonShortswithmatchingtshirtwithcutePrintsBeigeRei1.jpg"
         },
         {
             id: 5,
-            name: "I'm a product",
-            price: 50.00,
+            name: "Blue graphic t-shirt & light purple shorts",
+            price: 38,
             imgSrc: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/29842554/2024/7/10/617bbdab-2caf-4992-b637-f926a9a1fe311720613518131-Nap-Chief-Kids-Printed-Pure-Cotton-T-shirt-With-Short-229172-11.jpg"
         },
         {
             id: 6,
-            name: "I'm a product",
-            price: 37.00,
+            name: "Brown button-up shirt & black pants",
+            price: 55,
             imgSrc: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/28219632/2024/3/12/4fc84572-cad2-4b42-9a39-006351e9db651710256687610CampusSutraMenClassicOpaqueCheckedCasualShirt1.jpg"
         }
     ];
@@ -48,7 +48,6 @@ const Shop = () => {
        };
         const updatedCart = [...cart, productWithUniqueId]
         setCart(updatedCart)
-        // console.log(updatedCart);
         
 
     }
@@ -65,7 +64,7 @@ const Shop = () => {
                         </div>
                         <div className="pdtDetails" id={`pdt-${product.id}`}>
                             <p className="pname">{product.name}</p>
-                            <p className="price">"$"{product.price}</p>
+                            <p className="price">$ {product.price.toFixed(2)}</p>
                             <button onClick={() => addToCart(product)}>Add to cart</button>
                         </div>
                     </div>

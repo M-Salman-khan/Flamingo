@@ -4,12 +4,12 @@ import Footer from '../Footer/Footer'
 const SignUp = () => {
     const handleLogin=(e)=>{
         e.preventDefault();
-        window.location.href('/login')
+        window.location.href='/login'
     }
     const handleSignUpClick = (e) => {
         e.preventDefault();
-        alert("Sign Up succefull")
-        window.location.href('/login')
+        alert("Sign Up successfull")
+        // window.location.href('/login')
     }
     return (
         <>
